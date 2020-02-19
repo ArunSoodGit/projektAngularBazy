@@ -1,0 +1,35 @@
+<mat-card class="example-card">
+  <div class="title">EDIT COUNTRIES</div>
+  <form #countriesForm="ngForm" (ngSubmit)="countriesForm.form.valid && onSubmit(country)">
+    <div>
+      <mat-form-field >
+        <input type="text" matInput  [(ngModel)]="country.countryId" disabled="true" required #countryId ="ngModel" name="countryId" >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <input type="text" matInput placeholder="Country name" [(ngModel)]="country.countryName" required #countryName ="ngModel" name="countryName">
+        <mat-error *ngIf="countryName?.invalid && (countryName.dirty || countryName.touched)">
+          <div *ngIf="countryName.errors.required">
+           Country Name is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="number" matInput placeholder="Region Id" [(ngModel)]="country.regionId" required #countryRegion ="ngModel" name="countryRegion">
+        <mat-error *ngIf="countryRegion?.invalid && (countryRegion.dirty || countryRegion.touched)">
+          <div *ngIf="countryRegion.errors.required">
+            Region is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button  cdkFocusInitial  >Update</button>
+
+      <p>
+        <button mat-raised-button color="primary" [routerLink]="['/']">Go back</button>
+      </p>
+    </div>
+  </form>
+
+
+</mat-card>
