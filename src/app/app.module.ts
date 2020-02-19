@@ -25,8 +25,7 @@ import { DepartmentFormComponent } from './forms/department-form/department-form
 import { EmployeeFormComponent } from './forms/employee-form/employee-form.component';
 import { JobFormComponent } from './forms/job-form/job-form.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { NewEmployeeComponent } from './add/new-employee/new-employee.component';
-import { NewJobComponent } from './add/new-job/new-job.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,8 +38,7 @@ import { NewJobComponent } from './add/new-job/new-job.component';
     EmployeeFormComponent,
     JobFormComponent,
     TabsComponent,
-    NewEmployeeComponent,
-    NewJobComponent
+
   ],
   imports: [
     BrowserModule,

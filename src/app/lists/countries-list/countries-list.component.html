@@ -20,12 +20,9 @@
     <td mat-cell *matCellDef="let element">
       <button mat-button matSuffix mat-stroked-button aria-label="search"
               [routerLink]="['/country', element.countryId]">
-        <mat-icon>edit</mat-icon>
+        <mat-icon class="edit">edit</mat-icon>
       </button>
-      <button mat-button matSuffix mat-stroked-button aria-label="delete"
-              [routerLink]="['/country', element.countryId]">
-        <mat-icon>delete</mat-icon>
-      </button>
+
   </ng-container>
 
 

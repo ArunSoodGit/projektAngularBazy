@@ -5,7 +5,6 @@ import {TabsComponent} from './tabs/tabs.component';
 import {JobFormComponent} from './forms/job-form/job-form.component';
 import {DepartmentFormComponent} from './forms/department-form/department-form.component';
 import {CountriesFormComponent} from './forms/countries-form/countries-form.component';
-import {NewEmployeeComponent} from './add/new-employee/new-employee.component';
 
 const routes: Routes = [
   {
@@ -28,10 +27,7 @@ const routes: Routes = [
     path: 'country/:id',
     component: CountriesFormComponent
   },
-  {
-    path: 'new_employee',
-    component: NewEmployeeComponent
-  }
+
 ];
 
 @NgModule({
