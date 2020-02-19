@@ -6,6 +6,7 @@ import {DataService} from '../../services/data.service';
 import {MatSnackBar} from '@angular/material';
 import {switchMap} from 'rxjs/operators';
 
+// @ts-ignore
 @Component({
   selector: 'app-countries-form',
   templateUrl: './countries-form.component.html',
@@ -38,6 +39,7 @@ export class CountriesFormComponent implements OnInit {
 
   onSubmit(country) {
     this.service.updateCountry(country).subscribe();
+
     this.snackBar.open('Country updated successful', 'OK', {
       duration: 2000,
     });
