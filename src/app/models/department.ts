@@ -1,5 +1,5 @@
 export class Department {
-  departmentId: string;
+  departmentId: number;
   departmentName: string;
   managerId: string;
   locationId: string;

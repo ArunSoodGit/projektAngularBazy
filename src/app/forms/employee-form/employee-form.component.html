@@ -1,46 +1,71 @@
 <mat-card class="example-card">
   <div class="title">EDIT EMPLOYEE</div>
-    <mat-form-field >
-      <input  type="number" matInput placeholder="Employee Id"  [(ngModel)]="employee.employeeId"  [disabled]="true">
-    </mat-form-field>
-  <div>
-    <mat-form-field >
-      <input type="text"  matInput placeholder="First name"  [(ngModel)]="employee.firstName" required="true">
-    </mat-form-field>
+  <form #employeeForm="ngForm" (ngSubmit)="employeeForm.form.valid && onSubmit(employee)" >
+    <div>
+      <mat-form-field >
+        <input type="text" matInput  [(ngModel)]="employee.employeeId" disabled="true" required #employeeId ="ngModel" name="employeeId" >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <input type="text" matInput placeholder="First name" [(ngModel)]="employee.firstName" required #firstName ="ngModel" name="firstName">
+        <mat-error *ngIf="firstName?.invalid && (firstName.dirty || firstName.touched)">
+          <div *ngIf="firstName.errors.required">
+            First name  is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field >
-      <input type="text" matInput placeholder="Last name"  [(ngModel)]="employee.lastName" required="true">
-    </mat-form-field>
-
-    <mat-form-field >
-      <input type="text" matInput placeholder="Email" [(ngModel)]="employee.email" >
-    </mat-form-field>
-
-    <mat-form-field >
-      <input type="text" matInput placeholder="Phone number"  [(ngModel)]="employee.phoneNumber">
-    </mat-form-field>
-  </div>
-
-  <mat-form-field >
-    <input type="text" matInput placeholder="Job id"  [(ngModel)]="employee.jobId" required="true">
-  </mat-form-field>
-
-  <mat-form-field class="firstName">
-    <input type="number" matInput placeholder="Salary"  [(ngModel)]="employee.salary" required="true">
-  </mat-form-field>
-
-  <mat-form-field class="managerId">
-    <input type="number" matInput placeholder="Manager Id" [(ngModel)]="employee.managerId" required="true">
-  </mat-form-field>
-
-  <p>
-    <button mat-raised-button color="primary" (click)="onSubmit(employee)">Update</button>
-  </p>
-
-  <p>
-    <button mat-raised-button color="primary" [routerLink]="['/']">Go back</button>
-  </p>
-
-
-
+      <mat-form-field >
+        <input type="text" matInput placeholder="Last name" [(ngModel)]="employee.lastName" required #lastName ="ngModel" name="lastName">
+        <mat-error *ngIf="lastName?.invalid && (lastName.dirty || lastName.touched)">
+          <div *ngIf="lastName.errors.required">
+            Last name is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="text" matInput placeholder="Email" [(ngModel)]="employee.email"  #email ="ngModel" name="email">
+        <mat-error *ngIf="email?.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required">
+            Email is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="number" matInput placeholder="Phone number" [(ngModel)]="employee.phoneNumber"  #phoneNumber ="ngModel" name="phoneNumber">
+        <mat-error *ngIf="phoneNumber?.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+          <div *ngIf="phoneNumber.errors.required">
+            Phone number is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="text" matInput placeholder="Job id" [(ngModel)]="employee.jobId" required #jobId ="ngModel" name="jobId">
+        <mat-error *ngIf="jobId?.invalid && (jobId.dirty || jobId.touched)">
+          <div *ngIf="jobId.errors.required">
+            Job id is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="number" matInput placeholder="Salary" [(ngModel)]="employee.salary" required #salary ="ngModel" name="salary">
+        <mat-error *ngIf="salary?.invalid && (salary.dirty || salary.touched)">
+          <div *ngIf="salary.errors.required">
+            Salary is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="number" matInput placeholder="Manager Id" [(ngModel)]="employee.managerId"  #managerId ="ngModel" name="managerId">
+        <mat-error *ngIf="managerId?.invalid && (managerId.dirty || managerId.touched)">
+          <div *ngIf="managerId.errors.required">
+            Manager id is required.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <button class="update" mat-raised-button color="primary" cdkFocusInitial  [disabled]="!employeeForm.form.valid">Update</button>
+    </div>
+  </form>
+  <button class="back" mat-raised-button color="primary" [routerLink]="['/']">Go back</button>
 </mat-card>

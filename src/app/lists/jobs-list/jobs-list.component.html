@@ -22,9 +22,9 @@
   <ng-container matColumnDef="button">
     <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
     <td mat-cell *matCellDef="let element">
-      <button mat-button matSuffix mat-stroked-button aria-label="search"
+      <button class="edit" mat-button matSuffix mat-stroked-button aria-label="search"
               [routerLink]="['/job', element.jobId]">
-        <mat-icon class="edit">edit</mat-icon>
+        <mat-icon >edit</mat-icon>
       </button>
   </ng-container>
 

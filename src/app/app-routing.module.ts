@@ -20,7 +20,7 @@ const routes: Routes = [
     component: JobFormComponent
   },
   {
-    path: 'departments/:id',
+    path: 'department/:id',
     component: DepartmentFormComponent
   },
   {
